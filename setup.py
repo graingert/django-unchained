@@ -1,15 +1,25 @@
 import sys
 import webbrowser
+import functools
+import operator
 from distutils.core import setup
 
-trailer_url = 'http://pytorch.org/#pip-install-pytorch'
-message = 'You should install pytorch from http://pytorch.org'
+name = 'ensure-no-deps'
+version = '0.0.0'
+url = 'https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-no-deps'
+message = (
+    'You just attempted to install a package that depends on ensure-no-deps,
+    'that package must be installed with `pip install --no-deps` see also: ' +
+    url
+)
 
-argv = lambda x: x in sys.argv
+
+argv = functoools.partial(operator.contains, set(sys.argv))
+
 
 if (argv('install') or  # pip install ..
         (argv('--dist-dir') and argv('bdist_egg'))):  # easy_install
-    webbrowser.open_new(trailer_url)
+    webbrowser.open_new(url)
     raise Exception(message)
 
 
@@ -18,10 +28,10 @@ if argv('bdist_wheel'):  # modern pip install
 
 
 setup(
-    name='pytorch',
-    version='0.1.2',
+    name=name,
+    version=version,
     maintainer='Thomas Grainger',
-    maintainer_email='pytorch@graingert.co.uk',
+    maintainer_email=name + '@graingert.co.uk',
     long_description=message,
-    url=trailer_url,
+    url=url,
 )
