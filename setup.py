@@ -8,13 +8,13 @@ name = 'ensure-no-deps'
 version = '0.0.0'
 url = 'https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-no-deps'
 message = (
-    'You just attempted to install a package that depends on ensure-no-deps,
+    'You just attempted to install a package that depends on ensure-no-deps, '
     'that package must be installed with `pip install --no-deps` see also: ' +
     url
 )
 
 
-argv = functoools.partial(operator.contains, set(sys.argv))
+argv = functools.partial(operator.contains, set(sys.argv))
 
 
 if (argv('install') or  # pip install ..
