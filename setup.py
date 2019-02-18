@@ -4,12 +4,12 @@ import functools
 import operator
 from distutils.core import setup
 
-name = 'ensure-no-deps'
-version = '0.0.0'
-url = 'https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-no-deps'
+name = 'psphere2'
+version = '1.0.0'
+url = 'https://pypi.org/project/psphere/0.6.0a0/'
 message = (
-    'You just attempted to install a package that depends on ensure-no-deps, '
-    'that package must be installed with `pip install --no-deps` see also: ' +
+    name + ' is no-longer available, please install psphere>=0.6.0a0, see '
+    'also: ' +
     url
 )
 
