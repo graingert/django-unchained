@@ -4,11 +4,11 @@ import functools
 import operator
 from distutils.core import setup
 
-name = 'psphere2'
-version = '1.0.0'
-url = 'https://pypi.org/project/psphere/0.6.0a0/'
+name = 'vcdriver2'
+version = '0.0.2'
+url = 'https://pypi.org/project/vcdriver'
 message = (
-    name + ' is no-longer available, please install psphere>=0.6.0a0, see '
+    name + ' is no-longer available, please install vcdriver, see '
     'also: ' +
     url
 )
